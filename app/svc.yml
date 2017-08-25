@@ -1,0 +1,11 @@
+kind: Service
+apiVersion: v1
+metadata:
+  name: app
+  namespace: dev
+spec:
+  selector:
+    app: php-app
+  ports:
+  - protocol: TCP
+    port: 80

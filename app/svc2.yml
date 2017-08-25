@@ -1,0 +1,12 @@
+kind: Service
+apiVersion: v1
+metadata:
+  name: app2
+  namespace: dev
+spec:
+  type: LoadBalancer
+  selector:
+    app: php-app
+  ports:
+  - protocol: TCP
+    port: 80

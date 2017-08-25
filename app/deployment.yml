@@ -1,0 +1,31 @@
+apiVersion: apps/v1beta1
+kind: Deployment
+metadata:
+  name: php-app
+  namespace: dev
+spec:
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: php-app
+    spec:
+      containers:
+      - name: app
+        image: loja:v1
+        resources:
+          limits:
+            memory: 1Gi
+            cpu: 500m
+          requests:
+            memory: 200Ki
+            cpu: 200m
+        ports:
+        - containerPort: 80
+        env:
+        - name: LOJA_DB_HOST
+          value: mysql
+        - name: LOJA_DB_USER
+          value: root
+        - name: LOJA_DB_NAME
+          value: loja
