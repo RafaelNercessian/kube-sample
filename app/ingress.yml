@@ -3,8 +3,6 @@ kind: Ingress
 metadata:
   name: app-ingress
   namespace: dev
-  annotations:
-    ingress.kubernetes.io/rewrite-target: /
 spec:
   rules:
   - host: loja.test

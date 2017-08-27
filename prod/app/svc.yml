@@ -2,7 +2,6 @@ kind: Service
 apiVersion: v1
 metadata:
   name: app
-  namespace: prod
 spec:
   type: LoadBalancer
   selector:
